@@ -365,9 +365,9 @@ F 3 "" H 2900 2100 50  0001 C CNN
 	1    2900 2100
 	0    -1   -1   0   
 $EndComp
-Text Label 2900 1700 2    60   ~ 0
-11(**/MOSI)
 Text Label 2900 1600 2    60   ~ 0
+11(**/MOSI)
+Text Label 2900 1700 2    60   ~ 0
 12(MISO)
 Text Label 2900 2000 2    60   ~ 0
 13(SCK)
@@ -539,7 +539,7 @@ U 1 1 5BCAC0D9
 P 7350 1800
 F 0 "D1" H 7342 1545 50  0000 C CNN
 F 1 "LED" H 7342 1636 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 7350 1800 50  0001 C CNN
+F 2 "LED_THT:LED_D5.0mm_FlatTop" H 7350 1800 50  0001 C CNN
 F 3 "~" H 7350 1800 50  0001 C CNN
 	1    7350 1800
 	-1   0    0    1   

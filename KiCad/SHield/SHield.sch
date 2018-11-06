@@ -281,7 +281,7 @@ Wire Wire Line
 Wire Wire Line
 	9300 2100 9300 2200
 Wire Wire Line
-	9300 2200 9300 3150
+	9300 2200 9300 3100
 Wire Notes Line
 	8500 500  8500 3450
 Wire Notes Line
@@ -386,17 +386,6 @@ Connecteur LoRa\n
 NoConn ~ 2900 2200
 Text Label 2900 3750 2    60   ~ 0
 A1
-$Comp
-L power:+5V #PWR0103
-U 1 1 5BC93F7B
-P 2900 3450
-F 0 "#PWR0103" H 2900 3300 50  0001 C CNN
-F 1 "+5V" V 2915 3578 50  0000 L CNN
-F 2 "" H 2900 3450 50  0001 C CNN
-F 3 "" H 2900 3450 50  0001 C CNN
-	1    2900 3450
-	0    -1   -1   0   
-$EndComp
 Wire Notes Line
 	2600 3100 3950 3100
 Wire Notes Line
@@ -606,7 +595,6 @@ F 3 "" H 2900 3550 50  0000 C CNN
 	1    2900 3550
 	0    1    1    0   
 $EndComp
-NoConn ~ 2900 3650
 Text Label 10850 1200 0    60   ~ 0
 A5(SCL)
 Text Label 10850 1300 0    60   ~ 0
@@ -646,4 +634,71 @@ Wire Notes Line
 	5000 2600 7550 2600
 Wire Notes Line
 	5000 3650 7550 3650
+Text Label 2900 3650 2    60   ~ 0
+4
+$Comp
+L power:+5V #PWR?
+U 1 1 5BE1A15D
+P 2900 3450
+F 0 "#PWR?" H 2900 3300 50  0001 C CNN
+F 1 "+5V" V 2915 3578 50  0000 L CNN
+F 2 "" H 2900 3450 50  0001 C CNN
+F 3 "" H 2900 3450 50  0001 C CNN
+	1    2900 3450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5BE16345
+P 8800 1200
+F 0 "#FLG?" H 8800 1275 50  0001 C CNN
+F 1 "PWR_FLAG" H 8800 1374 50  0000 C CNN
+F 2 "" H 8800 1200 50  0001 C CNN
+F 3 "~" H 8800 1200 50  0001 C CNN
+	1    8800 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5BE1638B
+P 9450 1100
+F 0 "#FLG?" H 9450 1175 50  0001 C CNN
+F 1 "PWR_FLAG" H 9450 1274 50  0000 C CNN
+F 2 "" H 9450 1100 50  0001 C CNN
+F 3 "~" H 9450 1100 50  0001 C CNN
+	1    9450 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5BE163D1
+P 8950 3200
+F 0 "#FLG?" H 8950 3275 50  0001 C CNN
+F 1 "PWR_FLAG" V 8950 3328 50  0000 L CNN
+F 2 "" H 8950 3200 50  0001 C CNN
+F 3 "~" H 8950 3200 50  0001 C CNN
+	1    8950 3200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8950 3200 9000 3200
+Wire Wire Line
+	9000 3200 9000 3100
+Wire Wire Line
+	9000 3100 9300 3100
+Connection ~ 9300 3100
+Wire Wire Line
+	9300 3100 9300 3150
+Wire Wire Line
+	8800 1200 8800 1350
+Wire Wire Line
+	8800 1350 9050 1350
+Connection ~ 9050 1350
+Wire Wire Line
+	9150 1450 9250 1450
+Wire Wire Line
+	9250 1450 9250 1100
+Wire Wire Line
+	9250 1100 9450 1100
+Connection ~ 9150 1450
 $EndSCHEMATC

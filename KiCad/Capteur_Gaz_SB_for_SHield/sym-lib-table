@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Capteur_Gaz_SB_for_SHield-rescue)(type Legacy)(uri ${KIPRJMOD}/Capteur_Gaz_SB_for_SHield-rescue.lib)(options "")(descr ""))
+)

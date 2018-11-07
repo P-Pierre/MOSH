@@ -378,17 +378,6 @@ F 3 "" H 3550 4700 50  0001 C CNN
 	1    4600 4950
 	1    0    0    -1  
 $EndComp
-$Comp
-L LTC1050:Capteur_TO-5 U1
-U 1 1 5BE17C2A
-P 1350 4000
-F 0 "U1" H 3390 4338 50  0000 L CNN
-F 1 "Capteur_TO-5" H 3390 4247 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-5-4" H 2600 3850 50  0001 C CNN
-F 3 "" H 2600 3850 50  0001 C CNN
-	1    1350 4000
-	1    0    0    -1  
-$EndComp
 NoConn ~ 4750 5150
 $Comp
 L Connector:Conn_01x04_Male J2
@@ -478,4 +467,15 @@ Wire Wire Line
 Wire Wire Line
 	5950 3600 5950 3650
 Connection ~ 6400 3600
+$Comp
+L LTC1050:Capteur_TO-5 U1
+U 1 1 5BE30688
+P 1350 4000
+F 0 "U1" H 3390 4338 50  0000 L CNN
+F 1 "Capteur_TO-5" H 3390 4247 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-5-4" H 2600 3850 50  0001 C CNN
+F 3 "" H 2600 3850 50  0001 C CNN
+	1    1350 4000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -89,6 +89,7 @@ La partie void setup() nous permet principalement de tester et d’établir la c
 Dans la partie void loop(), l’envoie de donnée à la puce LoRa est réalisé avec la commande “myLora.tx(Donnée)”, la fonction découpe et envoie automatiquement les données en paquets de 2 caractères hexadécimales (8bits). 
 
 Ces données sont alors lisibles directement sur TTN dans l’onglet “data” de notre device. Cependant ces données sont affiché sous leurs forme hexadécimales, il est nécessaire de coder un “Payload Formats” pour effectuer un affichage sous forme décimale. 
+![Réception de messages sur TTN](../developpement/IMG/TTN.png)
 
 b. Capteur de gaz connectée et gestion d'interruption
 ------------------------------------------------------
@@ -99,6 +100,7 @@ Il est possible de définir des interruptions dans le void setup() du programme 
 Une interruption est définie de la manière suivante : “attachInterrupt(1, gestionINT0UP, RISING)”. Ainsi quand un état montant est lu sur la pin 3, l'interruption se déclenche et exécute la fonction gestionINT0UP. Nous avons défini deux interruption différentes, une pour la lecture d’un état montant et une pour un état descendant.
 Pour déclencher les interruptions, nous avons utilisé un AOP, le LM393, pour comparer la tension généré par le capteur de gaz MQ-5 et une tension seuil que nous avons défini grâce à un pont diviseur de tension. Ainsi des que la tension du capteur de gaz MQ-5 dépasse ce seuil, un état haut est généré en sortie de l’AOP. A l’inverse quand la tension du capteur repasse sous le seuil, un état bas est généré. On note qu’une LED rouge s’allume et qu’un message d’alerte est envoyé sur le port série de l’ordinateur quand la tension du capteur de gaz se trouve au dessus du seuil et que la LED s’éteint dans le cas contraire. Un message de retour à l’état normal est également envoyé sur le port série.
 Utilisation du comparateur nous permet de générer des interruptions sans utiliser une comparaison logiciel qui serait exécuté à chaque exécution de la boucle. 
+![Communication avec le port série de l'ordinateur](../developpement/IMG/Interrup.png)
 
 
 c.   Gestion de consommation d’énergie
@@ -113,8 +115,12 @@ d.   Interface Node-RED
 Afin de pouvoir interagir avec le capteur via le cloud (TTN): donc lire et écrire des messages, on a utilisé une interface Node-RED, très pratique. 
 La première chose à faire, c’est d’installer l’interface sur votre PC. Pour ce faire, on a utilisé un guide de Node-RED pour Windows :  https://nodered.org/docs/platforms/windows. Après avoir installé l’interface on y accède via le terminal (commande “node-red”) et on ouvre l’adresse qu’il nous propose dans un  navigateur Web. Pour pouvoir manipuler les données de TTN, on doit installer une librairie “TheThingsNetwork” dédiée. 
 A partir de maintenant on peut assembler l’interface, qui nous permettra d’afficher proprement les données du capteur. Tout d’abord on configure la partie “device” avec les identifiants de l’application TTN dédiée. Si tout a été bien saisi, on verra un voyant vert et le message “connected” à côté du “device”. Ensuite on va rajouter une fonction “get payload” à la suite du “device” qui va nous permettre de garder le message utile : msg = {value: msg.payload['payload']};return msg. Puis on connecte un afficheur “graphique en fonction du temps” et une jauge  à la suite de la fonction, pour pouvoir enfin afficher notre donnée. En cliquant sur “Deploy” et puis sur le “dashboard” on affiche les données en temps réel dans un nouvel onglet. 
-Sur les images suivantes vous voyez la réponse du capteur de gaz: normale au début, puis “rouge” à cause d’une concentration importante du gaz dangereux, et qui repasse en normale après. Vous y trouverez aussi notre interface Node-RED.  
-
+Sur les images suivantes vous voyez la réponse du capteur de gaz: normale au début, puis “rouge” à cause d’une concentration importante du gaz dangereux, et qui repasse en normale après. Vous y trouverez aussi notre interface Node-RED.
+![Code sous Node Red - bloc](../developpement/IMG/node-red4.png)
+![Code sous Node Red - Fonction payload](../developpement/IMG/node-red5.png)
+![Graph 1](../developpement/IMG/node-red1.png)
+![Graph 2](../developpement/IMG/node-red2.png)
+![Graph 3](../developpement/IMG/node-red3.png)
 
 3.Réalisation des PCBs pour le projet
 ======================================

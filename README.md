@@ -62,7 +62,7 @@ b. Détail du contenue du dossier
 
 Ce projet comporte 3 dossiers différents :
 
-* Le dossier KiCad regroupe les différents SHIELDS et PCBs réalisés.
+* Le dossier KiCad regroupe les différents SHIELDS et PCBs réalisés. Les versions finales sont Capteur_Gaz_SB_for_SHield et SHield. Pour la PCB du nanocapteur de gaz et du shield du mini-projet respectivement.
 
 * Le dossier arduino regroupe les codes arduino réalisés et utilisés sur la carte arduino UNO. Ce dossier dispose également d’un fichier.zip avec la librairie utilisé pour l’envoie de données avec LoRa.
 

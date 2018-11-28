@@ -4,9 +4,9 @@
 #include <math.h>
 
 SoftwareSerial mySerial(11, 12); // TX, RX
-const int LED = 6; //ok
+const int LED = 6;
+const int LED2 = 5;
 float sensorValue= 0;
-//float sensor_volt= 0;
 int interup_secuUp= 0;
 int interup_secuDw= 0;
 int interup_secuCycle= 0;
@@ -19,7 +19,7 @@ rn2xx3 myLora(mySerial);
 // the setup routine runs once when you press reset:
 void setup(){
               //output LED pin
-              pinMode(5, OUTPUT); //anciennement 13
+              pinMode(LED2, OUTPUT); //anciennement 13
               pinMode(LED, OUTPUT); 
               
               // attache l'interruption externe n°1 à la fonction gestionINT0UP()--0= pin2 et 1= pin3-- 
@@ -156,12 +156,12 @@ void loop(){
 // la fonction d'allumage de la led branchée sur la pin 5
 
 void led_on(){
-  digitalWrite(5, 1);
+  digitalWrite(LED2, 1);
 }
 
 // la fonction qui eteint la led branchée sur la pin 5
 
 void led_off(){
-  digitalWrite(5, 0);
+  digitalWrite(LED2, 0);
 }
 

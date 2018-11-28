@@ -93,7 +93,7 @@ La partie void setup() nous permet principalement de tester et d’établir la c
 Dans la partie void loop(), l’envoie de donnée à la puce LoRa est réalisé avec la commande “myLora.tx(Donnée)”, la fonction découpe et envoie automatiquement les données en paquets de 2 caractères hexadécimale (8bits). 
 
 Ces données sont alors lisibles directement sur TTN dans l’onglet “data” de notre device. Cependant ces données sont affichées sous leurs forme hexadécimale, il est nécessaire de coder un “Payload Formats” pour effectuer un affichage sous forme décimale. 
-![Réception de messages sur TTN](../developpement/IMG/TTN.PNG)
+![Réception de messages sur TTN](../developpement/IMG/TTN.png)
 
 b. Capteur de gaz connectée et gestion d'interruption
 ------------------------------------------------------
@@ -104,13 +104,13 @@ Il est possible de définir des interruptions dans le void setup() du programme 
 Une interruption est définie de la manière suivante : “attachInterrupt(1, gestionINT0UP, RISING)”. Ainsi quand un état montant est lu sur la pin 3, l'interruption se déclenche et exécute la fonction gestionINT0UP. Nous avons défini deux interruption différentes, une pour la lecture d’un état montant et une pour un état descendant.
 Pour déclencher les interruptions, nous avons utilisé un AOP, le LM393, pour comparer la tension généré par le capteur de gaz MQ-5 et une tension seuil que nous avons défini grâce à un pont diviseur de tension. Ainsi dès que la tension du capteur de gaz MQ-5 dépasse ce seuil, un état haut est généré en sortie de l’AOP. A l’inverse quand la tension du capteur repasse sous le seuil, un état bas est généré. On note qu’une LED rouge s’allume et qu’un message d’alerte est envoyé sur le port série de l’ordinateur quand la tension du capteur de gaz se trouve au dessus du seuil. Dans le cas contraire, la LED s’éteint et un message de retour à l’état normal est envoyé sur le port série.
 Utilisation du comparateur nous permet de générer des interruptions sans utiliser une comparaison logiciel qui serait testé à chaque exécution de la boucle. 
-![Communication avec le port série de l'ordinateur](../developpement/IMG/Interrup.png)
+![Communication avec le port série de l'ordinateur](../developpement/IMG/Interrup.PNG)
 
 
 c.   Gestion de consommation d’énergie
 --------------------------------------
 
-On peut estimer la consommation énergétique du système avec un Charger Doctor  qui se branche en série entre le port USB de l'ordinateur et le câble USB de l’Arduino. Il nous affiche la consommation moyenne de 0,280 A avec le capteur de gaz MQ-5 connecté. Or, dès qu’on déconnecte le capteur on tombe à  80mA de consommation. Cela s’explique par le fait que le capteur MQ-5 mesure la concentration des gazs en chauffant une résistance, ce qui n’est pas optimale pour la consommation énergétique. Avec le nanocapteur de gaz en revanche, on pourra espérer avoir une consommation d'énergie beaucoup plus basse. 
+On peut estimer la consommation énergétique du système avec un Charger Doctor  qui se branche en série entre le port USB de l'ordinateur et le câble USB de l’Arduino. Il nous affiche la consommation moyenne de 0,280 A avec le capteur de gaz MQ-5 connecté. Or, dès qu’on déconnecte le capteur on tombe à  80mA de consommation. Cela s’explique par le fait que le capteur MQ-5 mesure la concentration des gaz en chauffant une résistance, ce qui n’est pas optimale pour la consommation énergétique. Avec le nanocapteur de gaz en revanche, on pourra espérer avoir une consommation d'énergie beaucoup plus basse. 
 
 
 d.   Interface Node-RED

@@ -1,6 +1,3 @@
-//Sauce
-//https://letmeknow.fr/blog/2015/10/27/tutomodulelora/
-//https://www.thethingsnetwork.org/forum/t/how-to-build-your-first-ttn-node-arduino-rn2483/1574
 
 #include <rn2xx3.h>
 #include <SoftwareSerial.h>
@@ -48,7 +45,7 @@ void setup(){
 
 void initialize_radio(){
     //reset rn2483
-    pinMode(13, OUTPUT); //anciennement 12
+    pinMode(13, OUTPUT); 
     
     digitalWrite(13, LOW);
     
@@ -93,16 +90,6 @@ void initialize_radio(){
     
       join_result = myLora.initABP(devAddr, appSKey, nwkSKey);
 
-      /*
-       * OTAA: initOTAA(String AppEUI, String AppKey);
-       * If you are using OTAA, paste the example code from the TTN console here:
-       */
-     // const char *appEui = "70B3D57ED0012F19";
-     // const char *appKey = "98CA90603691B41BCED065070B394A10";
-    
-     // join_result = myLora.initOTAA(appEui, appKey);
-    
-
       while(!join_result)
         {
           Serial.println("Unable to join. Are your keys correct, and do you have TTN coverage?");
@@ -127,6 +114,7 @@ void gestionINT0UP() {
       }
     }
 }
+// la fonction d'interruption descendante
 
 void gestionINT0DW() { 
     delayMicroseconds(10000);
@@ -148,8 +136,6 @@ void loop(){
     delay(1000);
 
     sensorValue = analogRead(A0);
-    //sensor_volt = analogRead(A0)/1024*5;
-    //Res = String(sensor_volt, 3);
     Res = String(sensorValue/1024*5, 3);
 
     led_on();
@@ -164,13 +150,16 @@ void loop(){
     interup_secuDw= 0;
     
     myLora.tx(Res); //one byte, blocking function
-    //myLora.txCommand("radio tx", "48656c6C6F", false);
     led_off();
 }
+
+// la fonction d'allumage de la led branchée sur la pin 5
 
 void led_on(){
   digitalWrite(5, 1);
 }
+
+// la fonction qui eteint la led branchée sur la pin 5
 
 void led_off(){
   digitalWrite(5, 0);

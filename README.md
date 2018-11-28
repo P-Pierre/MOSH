@@ -93,7 +93,7 @@ La partie void setup() nous permet principalement de tester et d’établir la c
 Dans la partie void loop(), l’envoie de donnée à la puce LoRa est réalisé avec la commande “myLora.tx(Donnée)”, la fonction découpe et envoie automatiquement les données en paquets de 2 caractères hexadécimale (8bits). 
 
 Ces données sont alors lisibles directement sur TTN dans l’onglet “data” de notre device. Cependant ces données sont affichées sous leurs forme hexadécimale, il est nécessaire de coder un “Payload Formats” pour effectuer un affichage sous forme décimale. 
-![Réception de messages sur TTN](../developpement/IMG/TTN.png)
+![Réception de messages sur TTN](../developpement/IMG/TTN.PNG)
 
 b. Capteur de gaz connectée et gestion d'interruption
 ------------------------------------------------------

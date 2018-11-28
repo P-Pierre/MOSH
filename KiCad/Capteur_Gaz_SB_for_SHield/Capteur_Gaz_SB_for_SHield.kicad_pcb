@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 8)
+    (drawings 9)
     (tracks 75)
     (zones 0)
     (modules 18)
@@ -895,6 +895,9 @@
     )
   )
 
+  (gr_text "Prakapenka & Prie" (at 137.16 45.72) (layer B.Cu)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_line (start 149.86 41.91) (end 101.6 41.91) (layer Edge.Cuts) (width 0.2))
   (gr_line (start 152.4 44.45) (end 149.86 41.91) (layer Edge.Cuts) (width 0.2))
   (gr_line (start 152.4 86.36) (end 152.4 44.45) (layer Edge.Cuts) (width 0.2))

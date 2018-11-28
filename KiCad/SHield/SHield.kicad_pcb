@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 27)
+    (drawings 28)
     (tracks 120)
     (zones 0)
     (modules 22)
@@ -1138,6 +1138,9 @@
     )
   )
 
+  (gr_text "Prakapenka & Prie" (at 114.808 114.935 90) (layer B.Cu)
+    (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
+  )
   (gr_text 1 (at 138.938 121.285 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )

@@ -103,7 +103,8 @@ Le capteur de gaz MQ-5 possède une connexion de type “groove”. C’est un c
 Il est possible de définir des interruptions dans le void setup() du programme Arduino. Les interruptions consistent en une fonction qui sera exécutée à chaque fois que la condition d'interruption est réalisée. Pendant son exécution, le reste du programme est mis en pause. A la fin de son exécution, le programme reprend au début de la Void loop(). 
 Une interruption est définie de la manière suivante : “attachInterrupt(1, gestionINT0UP, RISING)”. Ainsi quand un état montant est lu sur la pin 3, l'interruption se déclenche et exécute la fonction gestionINT0UP. Nous avons défini deux interruption différentes, une pour la lecture d’un état montant et une pour un état descendant.
 Pour déclencher les interruptions, nous avons utilisé un AOP, le LM393, pour comparer la tension généré par le capteur de gaz MQ-5 et une tension seuil que nous avons défini grâce à un pont diviseur de tension. Ainsi dès que la tension du capteur de gaz MQ-5 dépasse ce seuil, un état haut est généré en sortie de l’AOP. A l’inverse quand la tension du capteur repasse sous le seuil, un état bas est généré. On note qu’une LED rouge s’allume et qu’un message d’alerte est envoyé sur le port série de l’ordinateur quand la tension du capteur de gaz se trouve au dessus du seuil. Dans le cas contraire, la LED s’éteint et un message de retour à l’état normal est envoyé sur le port série.
-Utilisation du comparateur nous permet de générer des interruptions sans utiliser une comparaison logiciel qui serait testé à chaque exécution de la boucle. 
+Utilisation du comparateur nous permet de générer des interruptions sans utiliser une comparaison logiciel qui serait testé à chaque exécution de la boucle.
+
 ![Communication avec le port série de l'ordinateur](../developpement/IMG/Interrup.PNG)
 
 
